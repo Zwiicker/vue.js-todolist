@@ -30,7 +30,7 @@
 				<!-- Enviar -->
 				<ButtonElement
 					name="button"
-					align="right"
+					align="left"
 					submits
 				>
 					Enviar
@@ -322,9 +322,13 @@ h1 {
 }
 
 .vf-btn.vf-btn-primary{
-    --vf-primary: #065143;
+    --vf-primary: black;
 
+.feito{
+	    --vf-primary: green;
 }
+}
+
 
 
 /* Estilos para telas pequenas (responsivo) */
