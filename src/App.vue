@@ -1,7 +1,11 @@
 <template>
 	<div class="page">
 		<div class="container">
+		      <div class="header">
+
+		    <img src="\src\img\todo.jpg" class="logo-image" />
 			<h1>Lista de Tarefas</h1>
+      </div>
 
 			<!-- Adicionando uma tarefa -->
 			<Vueform size="lg" :endpoint="createTask">
@@ -10,7 +14,7 @@
 				<TextElement
 					name="task"
 					placeholder="Adicionar uma tarefa"
-					floating="Nome da Tarefa"
+					floating="'Adicionar uma tarefa'"
 					rules="required"
 				/>
 
@@ -20,6 +24,7 @@
 					:items="['Pessoal', 'Estudos', 'Trabalho']"
 					view="tabs"
 					default="Pessoal"
+
 				/>
 
 				<!-- Enviar -->
@@ -257,18 +262,25 @@ h1 {
 
 .task-container {
 	background: #ffffff;
-	padding: 1rem;
+	padding: 0.5rem;
+    border-radius: 20px;
 
 	&.is-pessoal {
-		border-left: 3px solid green;
+		border-left: 10px solid #6BBBCB;
+		color:#6BBBCB;
+
 	}
 
 	&.is-estudos {
-		border-left: 3px solid blue;
+		border-left: 10px solid #390099;
+		color:#390099;
+		
 	}
 
 	&.is-trabalho {
-		border-left: 3px solid red;
+		border-left: 10px solid #EC4E20;
+		color:#EC4E20;
+        
 	}
 }
 
@@ -281,5 +293,48 @@ h1 {
 	top: 1rem;
 }
 
+.vf-radio-tabs {
+  transition: background-color 0.3s; // Efeito de transição suave
+  --vf-bg-input: #E2E2E2; // Cor de fundo padrão
+  --vf-primary: #390099;
+
+}
+
+.vf-radio-tabs-first {
+--vf-primary: #6BBBCB;
+}
+.vf-radio-tabs.vf-radio-tabs-last{
+	
+--vf-primary: #EC4E20;
+
+}
+
+.header {
+  display: flex;
+  align-items: center; // Centraliza verticalmente os itens
+  justify-content: center; // Centraliza horizontalmente os itens
+
+}
+.logo-image {
+  width: 50px; // Ajuste o tamanho conforme necessário
+  height: auto;
+  margin-right: 20px; // Ajuste a margem conforme necessário
+}
+
+.vf-btn.vf-btn-primary{
+    --vf-primary: #065143;
+
+}
+
+
+/* Estilos para telas pequenas (responsivo) */
+@media only screen and (max-width: 480px) {
+  
+  *{
+	font-size: 14px;
+  }
+
+  /* Adicione mais regras de estilo para outros elementos conforme necessário */
+}
 
 </style>
